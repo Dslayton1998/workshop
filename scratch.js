@@ -1,76 +1,39 @@
 /*
-Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
-You must write an algorithm with O(log n) runtime complexity.
+Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
  
 
 Example 1:
 
-Input: nums = [1,3,5,6], target = 5
-Output: 2
+Input: haystack = "sadbutsad", needle = "sad"
+Output: 0
+Explanation: "sad" occurs at index 0 and 6.
+The first occurrence is at index 0, so we return 0.
 Example 2:
 
-Input: nums = [1,3,5,6], target = 2
-Output: 1
-Example 3:
-
-Input: nums = [1,3,5,6], target = 7
-Output: 4
+Input: haystack = "leetcode", needle = "leeto"
+Output: -1
+Explanation: "leeto" did not occur in "leetcode", so we return -1.
  
 
 Constraints:
 
-1 <= nums.length <= 104
--104 <= nums[i] <= 104
-nums contains distinct values sorted in ascending order.
--104 <= target <= 104
+1 <= haystack.length, needle.length <= 104
+haystack and needle consist of only lowercase English characters.
 
-----------------------------------------------------------------------------------------------------------------------------------------
-1. check if the number is in the array, if so return index and done
-2. IF not, (number > currIndex == keep going) the moment (number < currIndex, we return counter)
-3. IF we reach the end and haven't found a spot, simply return the count
+------------------------------------------------------------------------------------------------------------------
+1.compare 1st char of needle to chars of haystack IF there is a match move the pointer for needle AND haystack (+1)
+2. IF counter == needle.length return the starting index
+3. IF counter == haystack.length return -1
 */
-
-var searchInsert = function(nums, target) {
-    let count = 0;
-    for(let i = 0; i < nums.length; i++) {
-        let currNum = nums[i];
-
-        // IF the target is in the array:
-        if(currNum == target) {
-            return i
-        };
-
-        // IF the target is not in the array:
-        if(nums[count] < target) {
-            count++
-        } else {
-            return count
-        }
-    }
-
-    return count
+// // var strStr = function(haystack, needle) {
+// //    let hayCounter = 0
+// //    let needCounter = 0
+// //    let index = 0
+// //    while(index <= needCounter) {
+// //    }
+// //};
+var strStr = function(haystack, needle) {
+    const index = haystack.indexOf(needle);
+    return index;
 };
-
-console.log(searchInsert([1,3,5,6], 5))
-console.log(searchInsert([1,3,5,6], 2))
-console.log(searchInsert([1,3,5,6], 7))
-// [1,3,5,6] target = 7
-// count = 4
-
-/*
-left, right = 0, len(nums) - 1
-        
-        while left <= right:
-            mid = left + (right - left) // 2
-            
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] < target:
-                left = mid + 1
-            else:
-                right = mid - 1
-        
-        return left
-*/
