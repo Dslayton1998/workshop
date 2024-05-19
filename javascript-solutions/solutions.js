@@ -281,3 +281,62 @@ var hasCycle = function(head) {
 
 // head = [-21,10,17,8,4,26,5,35,33,-7,-16,27,-12,6,29,-12,5,9,20,14,14,2,13,-24,21,23,-21,5]
 // pos = -1
+
+
+
+//* 14. Longest Common Prefix * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/*
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+ 
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+ 
+
+Constraints:
+
+1 <= strs.length <= 200
+0 <= strs[i].length <= 200
+strs[i] consists of only lowercase English letters.
+
+1. create a counter, and variable(zeroStr) for the first string in the arr
+2. compare all the other strings to that var(zeroStr)
+    * IF the letters match during comparison, create a var
+    * IF one string ends save it to a var
+*/
+var longestCommonPrefix = function(strs) {
+    let word=""; //the variable that takes every character of the first string one by one
+    let words="";// the variable that stores the previous state of 'word' variable
+    let i; 
+    let count=0; 
+    while(count != strs[0].length) // A loop to gather every character of the first string at 0th index
+    {
+        words=word; // stores the previous state
+        word+=strs[0][count]; //adds the next character to 'word' variable's previous state
+        for( i = 1 ; i < strs.length ; i++ ) 
+        {
+            if(strs[i][count]!==word[count]) 
+            {
+                // if true then revert to previous state and break
+                word=words;
+                break;
+            }
+        }
+        if(word == words) //if state of 'word' remains unchanged then break
+        {
+            break;
+        }
+        count += 1; //increment to count to get the next character
+    }
+    return(word);
+};
