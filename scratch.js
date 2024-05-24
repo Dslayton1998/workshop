@@ -1,70 +1,103 @@
 /*
-Given head, the head of a linked list, determine if the linked list has a cycle in it.
+Given a pattern and a string s, find if s follows the same pattern.
 
-There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer.
-Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
-
-Return true if there is a cycle in the linked list. Otherwise, return false.
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in s.
 
  
 
 Example 1:
 
-Input: head = [3,2,0,-4], pos = 1
+Input: pattern = "abba", s = "dog cat cat dog"
 Output: true
-Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
-
-
 Example 2:
 
-Input: head = [1,2], pos = 0
-Output: true
-Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
-
-
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
 Example 3:
 
-Input: head = [1], pos = -1
+Input: pattern = "aaaa", s = "dog cat cat dog"
 Output: false
-Explanation: There is no cycle in the linked list.
  
 
 Constraints:
 
-The number of the nodes in the list is in the range [0, 104].
--105 <= Node.val <= 105
-pos is -1 or a valid index in the linked-list.
+1 <= pattern.length <= 300
+pattern contains only lower-case English letters.
+1 <= s.length <= 3000
+s contains only lowercase English letters and spaces ' '.
+s does not contain any leading or trailing spaces.
+All the words in s are separated by a single space.  
 
-1. 3 -> 2 -> 0 -> -4
-        ^-----------
+1.index into pattern and set the first value of s into an object with pattern as key s as value
+2. IF the next letter in pattern exists in the object check if the next letters value is the same
+        IF NOT return false
 
-2. IF pos = -1 return false 
-3. head = 1st node, navigate until we reach an end (no .next)
-4. tail cycles back to a node farther up the list
-5. IF it does return true        
 */
-var hasCycle = function(head) {
-    if(head == null) {
-        return false
-    }
 
-    let list = [];
+var wordPattern = function(pattern, s) {
+    const wordArr = s.split(' ');
+    const map = {};
+    const reverseMap = {}
 
-    while (!list.includes(head)) {
-        if(head.next == null) {
-            return false
+    for(let i = 0; i < pattern.length; i++ ) {
+        const currPattern = pattern[i]
+        if(map[currPattern] == undefined) {
+            map[currPattern] = wordArr[i]
+            reverseMap[wordArr[i]] = currPattern
+        } else {
+            if(map[currPattern] != wordArr[i]) {
+                return false
+            }
+
+            if(reverseMap[wordArr[i]] != currPattern) {
+                return false
+            }
+
         }
-
-        list.push(head)
-        head = head.next
     }
 
+    // const keys = Object.keys(map)
+
+    // for(let i = 0; i < keys.length; i++) {
+    //     if(reverseMap[keys[i]] == undefined) {
+    //         return false
+    //     }
+    // }
     return true
 };
 
+// let pattern = "abba"
+// let s = "dog cat cat dog"
+// console.log(wordPattern('abba', "dog cat cat dog")) //true
+// console.log(wordPattern('abba', "dog cat cat fish")) //false
+// console.log(wordPattern('abba', "dog dog dog dog")) // false
+// console.log(wordPattern(pattern, s))
 
 
-// head = [-21,10,17,8,4,26,5,35,33,-7,-16,27,-12,6,29,-12,5,9,20,14,14,2,13,-24,21,23,-21,5]
-// pos = -1
 
+/*
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
 
+Each letter in magazine can only be used once in ransomNote.
+
+ 
+
+Example 1:
+
+Input: ransomNote = "a", magazine = "b"
+Output: false
+Example 2:
+
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+Example 3:
+
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+ 
+
+Constraints:
+
+1 <= ransomNote.length, magazine.length <= 105
+ransomNote and magazine consist of lowercase English letters.
+*/
