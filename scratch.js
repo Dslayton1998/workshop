@@ -1,59 +1,49 @@
 /*
-Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+Write an algorithm to determine if a number n is happy.
 
-A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+A happy number is a number defined by the following process:
+
+Starting with any positive integer, replace the number by the sum of the squares of its digits.
+Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+Those numbers for which this process ends in 1 are happy.
+Return true if n is a happy number, and false if not.
 
  
 
 Example 1:
 
-Input: s = "abc", t = "ahbgdc"
+Input: n = 19
 Output: true
-
-
+Explanation:
+1^2 + 9^2 = 82
+8^2 + 2^2 = 68
+6^2 + 8^2 = 100
+1^2 + 0^2 + 0^2 = 1
 Example 2:
 
-Input: s = "axc", t = "ahbgdc"
+Input: n = 2
 Output: false
-
-
-Example 3:
-
-Input: s = "abc", t= "cba"
-Output: false
-
  
 
 Constraints:
 
-0 <= s.length <= 100
-0 <= t.length <= 104
-s and t consist only of lowercase English letters.
- 
-
-Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
-* 1. split the s and t  string
-* 2. if 
+1 <= n <= 231 - 1
+* 1. split n, and square each digit in its sum, adding the totals to == the NEW n
+* 2. repeat this process until NEW n == 1
+* 3. If it ends in 1 return true
+    * - ELSE return false
 */
-var isSubsequence = function(s, t) {
-    let sPointer = 0;
-    // let rightPointer = 0;
-
-    for(let i = 0; i < t.length; i++) {
-        const currLetter = t[i];
-        
-        if(currLetter == s[sPointer]) {
-            sPointer++
-        }
+var isHappy = function(n) {
+    const checked = [];
+    while (n !== 1) {
+        if (checked.includes(n)) return false;
+        checked.push(n);
+        n = n.toString().split('').map(i => i**2).reduce((sum, i) => sum + i, 0);
     }
-
-    if(sPointer != s.length) {
-        return false
-    }
-
-    return true
+    return true;
 };
 
-// console.log(isSubsequence("abc", "ahbgdc")) // true 
-// console.log(isSubsequence("axc", "ahbgdc")) // false
-console.log(isSubsequence("abc", "cba")) // false
+
+// console.log(isHappy(19)) // true
+// console.log(isHappy(2)) // false
+// console.log(isHappy(7)) // true
