@@ -1,50 +1,59 @@
 /*
-Write a function to find the longest common prefix string amongst an array of strings.
+Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
 
-If there is no common prefix, return an empty string "".
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
 
  
 
-* Example 1:
+Example 1:
 
-Input: strs = ["flower","flow","flight"]
-Output: "fl"
+Input: s = "abc", t = "ahbgdc"
+Output: true
 
 
-* Example 2:
+Example 2:
 
-Input: strs = ["dog","racecar","car"]
-Output: ""
-Explanation: There is no common prefix among the input strings.
+Input: s = "axc", t = "ahbgdc"
+Output: false
+
+
+Example 3:
+
+Input: s = "abc", t= "cba"
+Output: false
+
  
 
 Constraints:
 
-1 <= strs.length <= 200
-0 <= strs[i].length <= 200
-strs[i] consists of only lowercase English letters.
+0 <= s.length <= 100
+0 <= t.length <= 104
+s and t consist only of lowercase English letters.
+ 
 
-* 1. iterate through the arr, and compare letters from left to right
-* 2. 
+Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
+* 1. split the s and t  string
+* 2. if 
 */
-var longestCommonPrefix = function(strs) {
-    let pref = strs[0];
-    let prefLen = pref.length;
+var isSubsequence = function(s, t) {
+    let sPointer = 0;
+    // let rightPointer = 0;
 
-    for (let i = 1; i < strs.length; i++) {
-        let s = strs[i];
-        while (pref !== s.substring(0, prefLen)) {
-            prefLen--;
-            if (prefLen === 0) {
-                return "";
-            }
-            pref = pref.substring(0, prefLen);
+    for(let i = 0; i < t.length; i++) {
+        const currLetter = t[i];
+        
+        if(currLetter == s[sPointer]) {
+            sPointer++
         }
     }
 
-    return pref; 
+    if(sPointer != s.length) {
+        return false
+    }
+
+    return true
 };
 
-// console.log(longestCommonPrefix(["flower","flow","flight"])) // "fl"
-// console.log(longestCommonPrefix(["dog","racecar","car"])) // "" (There is no common prefix among the input strings.)
-// console.log(longestCommonPrefix())
+// console.log(isSubsequence("abc", "ahbgdc")) // true 
+// console.log(isSubsequence("axc", "ahbgdc")) // false
+console.log(isSubsequence("abc", "cba")) // false
