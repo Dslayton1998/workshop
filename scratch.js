@@ -33,5 +33,30 @@ s and t consist of any valid ascii character.
  * @return {boolean}
  */
 var isIsomorphic = function(s, t) {
-    
+    const dict = new Map();
+    const hSet = new Set();
+
+    for(let i = 0; i< s.length;i++)
+    {
+        const sChar = s.charAt(i);
+        const tChar = t.charAt(i);
+        if (!dict.has(sChar))
+        {
+            if(hSet.has(tChar))
+            {
+                return false;
+            }
+            dict.set(sChar, tChar);
+            hSet.add(tChar);
+        }
+        else    //check if exists
+        {
+            if(tChar !== dict.get(sChar))
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
 };
