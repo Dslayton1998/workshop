@@ -1,24 +1,31 @@
 /*
-Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
 
  
 
 Example 1:
 
 
-Input: root = [1,2,2,3,4,4,3]
+Input: p = [1,2,3], q = [1,2,3]
 Output: true
 Example 2:
 
 
-Input: root = [1,2,2,null,3,null,3]
+Input: p = [1,2], q = [1,null,2]
+Output: false
+Example 3:
+
+
+Input: p = [1,2,1], q = [1,1,2]
 Output: false
  
 
 Constraints:
 
-The number of nodes in the tree is in the range [1, 1000].
--100 <= Node.val <= 100
+The number of nodes in both trees is in the range [0, 100].
+-104 <= Node.val <= 104
 */
 /**
  * Definition for a binary tree node.
@@ -29,18 +36,11 @@ The number of nodes in the tree is in the range [1, 1000].
  * }
  */
 /**
- * @param {TreeNode} root
+ * @param {TreeNode} p
+ * @param {TreeNode} q
  * @return {boolean}
  */
-var isSymmetric = function(root) {
-    if (root == null) return true;
-    return isMirror(root.left, root.right);
-
-    function isMirror(leftNode, rightNode) {
-        if (leftNode == null && rightNode == null) return true;
-        if (leftNode == null || rightNode == null) return false;
-        return leftNode.val === rightNode.val &&
-            isMirror(leftNode.left, rightNode.right) &&
-            isMirror(leftNode.right, rightNode.left);
-    }
+var isSameTree = function(p, q) {
+    
 };
+
