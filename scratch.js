@@ -41,6 +41,14 @@ The number of nodes in both trees is in the range [0, 100].
  * @return {boolean}
  */
 var isSameTree = function(p, q) {
+    if (!p && !q) {
+        return true;
+    }
     
+    if (p && q && p.val === q.val) {
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+    
+    return false;    
 };
 
