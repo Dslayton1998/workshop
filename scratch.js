@@ -1,51 +1,35 @@
 /*
-637. Average of Levels in Binary Tree
-Given the root of a binary tree, return the average value of the nodes on each level in the form of an array. Answers within 10-5 of the actual answer will be accepted.
+136. Single Number
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
  
 
 Example 1:
 
-
-Input: root = [3,9,20,null,null,15,7]
-Output: [3.00000,14.50000,11.00000]
-Explanation: The average value of nodes on level 0 is 3, on level 1 is 14.5, and on level 2 is 11.
-Hence return [3, 14.5, 11].
+Input: nums = [2,2,1]
+Output: 1
 Example 2:
 
+Input: nums = [4,1,2,1,2]
+Output: 4
+Example 3:
 
-Input: root = [3,9,20,15,7]
-Output: [3.00000,14.50000,11.00000]
+Input: nums = [1]
+Output: 1
  
 
 Constraints:
 
-The number of nodes in the tree is in the range [1, 104].
--231 <= Node.val <= 231 - 1
+1 <= nums.length <= 3 * 104
+-3 * 104 <= nums[i] <= 3 * 104
+Each element in the array appears twice except for one element which appears only once.
 */
 /**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
+ * @param {number[]} nums
+ * @return {number}
  */
-/**
- * @param {TreeNode} root
- * @return {number[]}
- */
-var averageOfLevels = function(root) {
-    let q = [root], ans = []
-    while (q.length) {
-        let qlen = q.length, row = 0
-        for (let i = 0; i < qlen; i++) {
-            let curr = q.shift()
-            row += curr.val
-            if (curr.left) q.push(curr.left)
-            if (curr.right) q.push(curr.right)
-        }
-        ans.push(row/qlen)
-    }
-    return ans
+var singleNumber = function(nums) {
+    
 };
-
