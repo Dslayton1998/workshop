@@ -1,41 +1,32 @@
 /*
-136. Single Number
-Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+69. Sqrt(x)
+Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
 
-You must implement a solution with a linear runtime complexity and use only constant extra space.
+You must not use any built-in exponent function or operator.
 
+For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
  
 
 Example 1:
 
-Input: nums = [2,2,1]
-Output: 1
+Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.
 Example 2:
 
-Input: nums = [4,1,2,1,2]
-Output: 4
-Example 3:
-
-Input: nums = [1]
-Output: 1
+Input: x = 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
  
 
 Constraints:
 
-1 <= nums.length <= 3 * 104
--3 * 104 <= nums[i] <= 3 * 104
-Each element in the array appears twice except for one element which appears only once.
+0 <= x <= 231 - 1
 */
 /**
- * @param {number[]} nums
+ * @param {number} x
  * @return {number}
  */
-var singleNumber = function(nums) {
-        // Initialize the unique number...
-        let uniqNum = 0;
-        // TRaverse all elements through the loop...
-        for (let idx = 0; idx < nums.length; idx++) {
-            // Concept of XOR...
-            uniqNum = uniqNum ^ nums[idx];
-        } return uniqNum;       // Return the unique number...
+var mySqrt = function(x) {
+    
 };
