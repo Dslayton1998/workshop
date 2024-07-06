@@ -1,46 +1,45 @@
 /*
-69. Sqrt(x)
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+148. Sort List
+Given the head of a linked list, return the list after sorting it in ascending order.
 
-You must not use any built-in exponent function or operator.
-
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
  
 
 Example 1:
 
-Input: x = 4
-Output: 2
-Explanation: The square root of 4 is 2, so we return 2.
+
+Input: head = [4,2,1,3]
+Output: [1,2,3,4]
 Example 2:
 
-Input: x = 8
-Output: 2
-Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
+
+Input: head = [-1,5,3,4,0]
+Output: [-1,0,3,4,5]
+Example 3:
+
+Input: head = []
+Output: []
  
 
 Constraints:
 
-0 <= x <= 231 - 1
+The number of nodes in the list is in the range [0, 5 * 104].
+-105 <= Node.val <= 105
+ 
+
+Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
 */
+
 /**
- * @param {number} x
- * @return {number}
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
  */
-var mySqrt = function(x) {
-    var beg = 0, end = x, ans = 0;
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var sortList = function(head) {
     
-    while(beg <= end) {
-        var mid = Math.floor((beg + end)/2);
-        
-        if(mid*mid > x) {
-            end = mid - 1;
-        }
-         
-        else { // mid*mid <= x
-            ans = mid;
-            beg = mid + 1;
-        }
-    }
-    return ans;
 };
