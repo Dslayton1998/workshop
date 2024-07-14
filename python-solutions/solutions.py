@@ -121,3 +121,19 @@ class Solution:
             if haystack[i:i+len(needle)] == needle:
                 return i
         return -1
+    
+
+#* 141. Linked List Cycle *########################################################################################
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        fast = head
+        slow = head
+        
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            
+            if fast == slow:
+                return True
+    
+        return False
