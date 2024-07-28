@@ -182,6 +182,7 @@ class Solution:
         
         return dummy.next
     
+
 #* 169. Majority Element *########################################################################################
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
@@ -197,3 +198,16 @@ class Solution:
                 res = n
             count += (1 if n == res else - 1)
         return res
+    
+
+#* 383. Ransom Note *########################################################################################
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if len(magazine)<len(ransomNote):
+            return False
+        for char in ransomNote:
+            if char in magazine:
+                magazine = magazine.replace(char,'',1)
+            else:
+                return False
+        return True
