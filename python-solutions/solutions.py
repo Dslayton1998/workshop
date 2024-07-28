@@ -183,3 +183,17 @@ class Solution:
         return dummy.next
     
 #* 169. Majority Element *########################################################################################
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        """
+        * look up *boyer-moore* alg
+        *  ^ there is a majority element (important for O(1))
+        """
+        res = 0
+        count = 0
+
+        for n in nums:
+            if count == 0:
+                res = n
+            count += (1 if n == res else - 1)
+        return res
