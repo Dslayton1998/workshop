@@ -1449,3 +1449,6 @@ var isPalindrome = function(x) {
     }
     return reverse === xCopy;
 };
+
+
+//* 1. Two Sum * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
