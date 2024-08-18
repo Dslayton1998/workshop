@@ -29,5 +29,21 @@ rec2.length == 4
 rec1 and rec2 represent a valid rectangle with a non-zero area.
 */
 var isRectangleOverlap = function(rec1, rec2) {
-    
+    if (rec1[2] <= rec2[0]) {
+        return false;
+    }
+    // Check if rec1 is to the right of rec2
+    if (rec1[0] >= rec2[2]) {
+        return false;
+    }
+    // Check if rec1 is above rec2
+    if (rec1[1] >= rec2[3]) {
+        return false;
+    }
+    // Check if rec1 is below rec2
+    if (rec1[3] <= rec2[1]) {
+        return false;
+    }
+    // If none of the above conditions are true, rectangles overlap
+    return true;
 };
