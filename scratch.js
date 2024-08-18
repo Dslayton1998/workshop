@@ -1,42 +1,33 @@
 /* 
-Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.
+An axis-aligned rectangle is represented as a list [x1, y1, x2, y2], where (x1, y1) is the coordinate of its bottom-left corner, and (x2, y2) is the coordinate of its top-right corner. Its top and bottom edges are parallel to the X-axis, and its left and right edges are parallel to the Y-axis.
 
-For example:
+Two rectangles overlap if the area of their intersection is positive. To be clear, two rectangles that only touch at the corner or edges do not overlap.
 
-A -> 1
-B -> 2
-C -> 3
-...
-Z -> 26
-AA -> 27
-AB -> 28 
-...
+Given two axis-aligned rectangles rec1 and rec2, return true if they overlap, otherwise return false.
+
  
 
 Example 1:
 
-Input: columnNumber = 1
-Output: "A"
+Input: rec1 = [0,0,2,2], rec2 = [1,1,3,3]
+Output: true
 Example 2:
 
-Input: columnNumber = 28
-Output: "AB"
+Input: rec1 = [0,0,1,1], rec2 = [1,0,2,1]
+Output: false
 Example 3:
 
-Input: columnNumber = 701
-Output: "ZY"
+Input: rec1 = [0,0,1,1], rec2 = [2,2,3,3]
+Output: false
  
 
 Constraints:
 
-1 <= columnNumber <= 231 - 1
+rec1.length == 4
+rec2.length == 4
+-109 <= rec1[i], rec2[i] <= 109
+rec1 and rec2 represent a valid rectangle with a non-zero area.
 */
-var convertToTitle = function(columnNumber) {
-    const arr = [];
-    while (cn > 0) {
-        const remainder = (cn - 1) % 26;
-        arr.push(String.fromCharCode(remainder + 65));
-        cn = Math.floor((cn - 1) / 26);
-    }
-    return arr.reverse().join('');
+var isRectangleOverlap = function(rec1, rec2) {
+    
 };
