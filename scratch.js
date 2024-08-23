@@ -32,5 +32,18 @@ root is guaranteed to be a valid binary search tree.
  * @return {boolean}
  */
 var findTarget = function(root, k) {
-    
+    let set = new Set();
+    return helper(root, k, set);
 };
+
+
+let helper = function(root, k, set){
+    if(root==null){
+        return false;
+    }
+    if(set.has(k-root.val)){
+        return true;
+    }
+    set.add(root.val);
+    return (helper(root.left, k, set) || helper(root.right, k, set));
+}
