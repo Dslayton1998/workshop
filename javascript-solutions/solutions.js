@@ -1766,3 +1766,8 @@ var arrayRankTransform = function(arr) {
 
     return arr
 };
+
+
+
+
+//* 2236. Root Equals Sum of Children * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
