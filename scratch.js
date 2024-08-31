@@ -40,5 +40,6 @@ The tree consists only of the root, its left child, and its right child.
  * @return {boolean}
  */
 var checkTree = function(root) {
-    
+    let value = root.left.val + root.right.val
+    return value = value === root.val ? true : false
 };
