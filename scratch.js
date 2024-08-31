@@ -1,45 +1,38 @@
 /*
-You are given the root of a binary tree that consists of exactly 3 nodes: the root, its left child, and its right child.
+1005. Maximize Sum Of Array After K Negations
 
-Return true if the value of the root is equal to the sum of the values of its two children, or false otherwise.
+Given an integer array nums and an integer k, modify the array in the following way:
+
+choose an index i and replace nums[i] with -nums[i].
+You should apply this process exactly k times. You may choose the same index i multiple times.
+
+Return the largest possible sum of the array after modifying it in this way.
 
  
 
 Example 1:
 
-
-Input: root = [10,4,6]
-Output: true
-Explanation: The values of the root, its left child, and its right child are 10, 4, and 6, respectively.
-10 is equal to 4 + 6, so we return true.
-
+Input: nums = [4,2,3], k = 1
+Output: 5
+Explanation: Choose index 1 and nums becomes [4,-2,3].
 Example 2:
 
+Input: nums = [3,-1,0,2], k = 3
+Output: 6
+Explanation: Choose indices (1, 2, 2) and nums becomes [3,1,0,2].
+Example 3:
 
-Input: root = [5,3,1]
-Output: false
-Explanation: The values of the root, its left child, and its right child are 5, 3, and 1, respectively.
-5 is not equal to 3 + 1, so we return false.
+Input: nums = [2,-3,-1,5,-4], k = 2
+Output: 13
+Explanation: Choose indices (1, 4) and nums becomes [2,3,-1,5,4].
  
 
 Constraints:
 
-The tree consists only of the root, its left child, and its right child.
--100 <= Node.val <= 100
+1 <= nums.length <= 104
+-100 <= nums[i] <= 100
+1 <= k <= 104
 */
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {boolean}
- */
-var checkTree = function(root) {
-    let value = root.left.val + root.right.val
-    return value = value === root.val ? true : false
+var largestSumAfterKNegations = function(nums, k) {
+    
 };

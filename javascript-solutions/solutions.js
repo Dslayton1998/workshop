@@ -1816,3 +1816,8 @@ var checkTree = function(root) {
     let value = root.left.val + root.right.val
     return value = value === root.val ? true : false
 };
+
+
+
+
+//* 1005. Maximize Sum Of Array After K Negations * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
