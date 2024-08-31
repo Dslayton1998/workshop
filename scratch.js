@@ -34,5 +34,18 @@ Constraints:
 1 <= k <= 104
 */
 var largestSumAfterKNegations = function(nums, k) {
-    
+    nums.sort((a, b) => a - b)
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] < 0 && k > 0) {
+        nums[i] *= -1
+        k--
+      }
+    }
+    if (nums.find((e) => e === 0) !== undefined) {
+      return nums.reduce((a, b) => a + b)
+    } else {
+      nums.sort((a, b) => a - b)
+      if (k % 2 !== 0) nums[0] *= -1
+    }
+    return nums.reduce((a, b) => a + b)
 };
