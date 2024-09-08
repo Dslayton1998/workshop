@@ -1,5 +1,4 @@
 /*
-867. Transpose Matrix
 Given a 2D integer array matrix, return the transpose of matrix.
 
 The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
@@ -24,5 +23,15 @@ n == matrix[i].length
 -109 <= matrix[i][j] <= 109
 */
 var transpose = function(matrix) {
-    
+    var result = [];
+
+    for (let i = 0; i < matrix[0].length; i++) {
+        result[i] = [];
+
+        for (let j = 0; j < matrix.length; j++) {
+
+            result[i].push(matrix[j][i])
+        }
+    }
+    return result;
 };
