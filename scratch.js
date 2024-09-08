@@ -36,5 +36,16 @@ Constraints:
 s consists only of lowercase English letters.
 */
 var makeFancyString = function(s) {
-    
+let str = " "
+    for(let i = 0; i < s.length; i++ ){
+        if( s[ i ] !== s[ i + 1 ]){
+            str += s[ i ]
+        } else if( s[ i ] === s[ i + 1 ]){
+        str += s[ i ] + s[ i + 1 ]
+        while(s[i] === s[ i + 1 ]){
+            i++
+        }
+      }
+    }
+    return str
 };
