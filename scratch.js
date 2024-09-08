@@ -1,37 +1,40 @@
 /*
-Given a 2D integer array matrix, return the transpose of matrix.
+1957. Delete Characters to Make Fancy String
+A fancy string is a string where no three consecutive characters are equal.
 
-The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
+Given a string s, delete the minimum possible number of characters from s to make it fancy.
+
+Return the final string after the deletion. It can be shown that the answer will always be unique.
+
+ 
 
 Example 1:
 
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-Output: [[1,4,7],[2,5,8],[3,6,9]]
-
-
+Input: s = "leeetcode"
+Output: "leetcode"
+Explanation:
+Remove an 'e' from the first group of 'e's to create "leetcode".
+No three consecutive characters are equal, so return "leetcode".
 Example 2:
 
-Input: matrix = [[1,2,3],[4,5,6]]
-Output: [[1,4],[2,5],[3,6]]
+Input: s = "aaabaaaa"
+Output: "aabaa"
+Explanation:
+Remove an 'a' from the first group of 'a's to create "aabaaaa".
+Remove two 'a's from the second group of 'a's to create "aabaa".
+No three consecutive characters are equal, so return "aabaa".
+Example 3:
+
+Input: s = "aab"
+Output: "aab"
+Explanation: No three consecutive characters are equal, so return "aab".
  
 
 Constraints:
-m == matrix.length
-n == matrix[i].length
-1 <= m, n <= 1000
-1 <= m * n <= 105
--109 <= matrix[i][j] <= 109
+
+1 <= s.length <= 105
+s consists only of lowercase English letters.
 */
-var transpose = function(matrix) {
-    var result = [];
-
-    for (let i = 0; i < matrix[0].length; i++) {
-        result[i] = [];
-
-        for (let j = 0; j < matrix.length; j++) {
-
-            result[i].push(matrix[j][i])
-        }
-    }
-    return result;
+var makeFancyString = function(s) {
+    
 };
