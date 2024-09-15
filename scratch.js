@@ -24,5 +24,18 @@ Constraints:
 All the values of nums[i] are unique.
 */
 var intersection = function(nums) {
-    
+    arr = [];
+    for (i = 0; i < nums.length; i++)
+        for (j = 0; j < nums[i].length; j++)
+            if (arr[nums[i][j]] == undefined)
+                arr[nums[i][j]] = 1;
+            else
+                arr[nums[i][j]]++;
+    neww = [];
+    for (i = 0; i < arr.length; i++)
+        if (arr[i] == undefined)
+            continue;
+        else if (arr[i] == nums.length)
+            neww.push(i);
+    return neww;
 };
