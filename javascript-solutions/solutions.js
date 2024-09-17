@@ -1971,7 +1971,7 @@ var makeFancyString = function(s) {
 
 
 
-//* 2248. Intersection of Multiple Arrays* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//* 2248. Intersection of Multiple Arrays * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /*
 Given a 2D integer array nums where nums[i] is a non-empty array of distinct positive integers, return the list of integers that are present in each array of nums sorted in ascending order.
  
@@ -2013,3 +2013,8 @@ var intersection = function(nums) {
             neww.push(i);
     return neww;
 };
+
+
+
+
+//* 2399. Check Distances Between Same Letters * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
