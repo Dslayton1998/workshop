@@ -37,5 +37,20 @@ distance.length == 26
 0 <= distance[i] <= 50
 */
 var checkDistances = function(s, distance) {
-    
+    n = s.length
+    const arr = new Array(distance.length).fill(-1)
+    // console.log(arr)
+    for(let i=0; i<n; i++){
+        const index = s[i].charCodeAt() - 'a'.charCodeAt()
+        if(arr[index] == -1){
+            arr[index] = i
+        } else {
+            dist = i - (arr[index] + 1)
+            arr[index] = dist
+            if(arr[index] != distance[index]){
+                return false
+            }
+        }
+    }
+    return true
 };
