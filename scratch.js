@@ -1,56 +1,30 @@
 /*
-You are given a 0-indexed string s consisting of only lowercase English letters, where each letter in s appears exactly twice. You are also given a 0-indexed integer array distance of length 26.
-
-Each letter in the alphabet is numbered from 0 to 25 (i.e. 'a' -> 0, 'b' -> 1, 'c' -> 2, ... , 'z' -> 25).
-
-In a well-spaced string, the number of letters between the two occurrences of the ith letter is distance[i]. If the ith letter does not appear in s, then distance[i] can be ignored.
-
-Return true if s is a well-spaced string, otherwise return false.
+258. Add Digits
+Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
 
  
 
 Example 1:
 
-Input: s = "abaccb", distance = [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-Output: true
-Explanation:
-- 'a' appears at indices 0 and 2 so it satisfies distance[0] = 1.
-- 'b' appears at indices 1 and 5 so it satisfies distance[1] = 3.
-- 'c' appears at indices 3 and 4 so it satisfies distance[2] = 0.
-Note that distance[3] = 5, but since 'd' does not appear in s, it can be ignored.
-Return true because s is a well-spaced string.
+Input: num = 38
+Output: 2
+Explanation: The process is
+38 --> 3 + 8 --> 11
+11 --> 1 + 1 --> 2 
+Since 2 has only one digit, return it.
 Example 2:
 
-Input: s = "aa", distance = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-Output: false
-Explanation:
-- 'a' appears at indices 0 and 1 so there are zero letters between them.
-Because distance[0] = 1, s is not a well-spaced string.
+Input: num = 0
+Output: 0
  
 
 Constraints:
 
-2 <= s.length <= 52
-s consists only of lowercase English letters.
-Each letter appears in s exactly twice.
-distance.length == 26
-0 <= distance[i] <= 50
+0 <= num <= 231 - 1
+ 
+
+Follow up: Could you do it without any loop/recursion in O(1) runtime?
 */
-var checkDistances = function(s, distance) {
-    n = s.length
-    const arr = new Array(distance.length).fill(-1)
-    // console.log(arr)
-    for(let i=0; i<n; i++){
-        const index = s[i].charCodeAt() - 'a'.charCodeAt()
-        if(arr[index] == -1){
-            arr[index] = i
-        } else {
-            dist = i - (arr[index] + 1)
-            arr[index] = dist
-            if(arr[index] != distance[index]){
-                return false
-            }
-        }
-    }
-    return true
+var addDigits = function(num) {
+    
 };
