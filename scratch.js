@@ -1,36 +1,55 @@
 /*
-Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
+You are given a 0-indexed integer array nums.
 
-Return the decimal value of the number in the linked list.
+The concatenation of two numbers is the number formed by concatenating their numerals.
 
-The most significant bit is at the head of the linked list.
+For example, the concatenation of 15, 49 is 1549.
+The concatenation value of nums is initially equal to 0. Perform this operation until nums becomes empty:
+
+If there exists more than one number in nums, pick the first element and last element in nums respectively and add the value of their concatenation to the concatenation value of nums, then delete the first and last element from nums.
+If one element exists, add its value to the concatenation value of nums, then delete it.
+Return the concatenation value of the nums.
 
  
 
 Example 1:
 
-Input: head = [1,0,1]
-Output: 5
-Explanation: (101) in base 2 = (5) in base 10
-
-
+Input: nums = [7,52,2,4]
+Output: 596
+Explanation: Before performing any operation, nums is [7,52,2,4] and concatenation value is 0.
+ - In the first operation:
+We pick the first element, 7, and the last element, 4.
+Their concatenation is 74, and we add it to the concatenation value, so it becomes equal to 74.
+Then we delete them from nums, so nums becomes equal to [52,2].
+ - In the second operation:
+We pick the first element, 52, and the last element, 2.
+Their concatenation is 522, and we add it to the concatenation value, so it becomes equal to 596.
+Then we delete them from the nums, so nums becomes empty.
+Since the concatenation value is 596 so the answer is 596.
 Example 2:
 
-Input: head = [0]
-Output: 0
+Input: nums = [5,14,13,8,12]
+Output: 673
+Explanation: Before performing any operation, nums is [5,14,13,8,12] and concatenation value is 0.
+ - In the first operation:
+We pick the first element, 5, and the last element, 12.
+Their concatenation is 512, and we add it to the concatenation value, so it becomes equal to 512.
+Then we delete them from the nums, so nums becomes equal to [14,13,8].
+ - In the second operation:
+We pick the first element, 14, and the last element, 8.
+Their concatenation is 148, and we add it to the concatenation value, so it becomes equal to 660.
+Then we delete them from the nums, so nums becomes equal to [13].
+ - In the third operation:
+nums has only one element, so we pick 13 and add it to the concatenation value, so it becomes equal to 673.
+Then we delete it from nums, so nums become empty.
+Since the concatenation value is 673 so the answer is 673.
  
 
 Constraints:
 
-The Linked List is not empty.
-Number of nodes will not exceed 30.
-Each node's value is either 0 or 1.
+1 <= nums.length <= 1000
+1 <= nums[i] <= 104
 */
-var getDecimalValue = function(head) {
-    let total=0;
-    while(head!=null){
-        total=total*2+head.val;
-        head=head.next;
-    }
-    return total;
+var findTheArrayConcVal = function(nums) {
+    
 };

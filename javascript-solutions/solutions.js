@@ -2150,3 +2150,8 @@ var getDecimalValue = function(head) {
     }
     return total;
 };
+
+
+
+
+//* 2562. Find the Array Concatenation Value * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
