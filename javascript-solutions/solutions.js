@@ -2109,3 +2109,8 @@ Follow up: Could you do it without any loop/recursion in O(1) runtime?
 var addDigits = function(num) {
     return 1 + (num - 1) % 9;
 };
+
+
+
+
+//* 1290. Convert Binary Number in a Linked List to Integer * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

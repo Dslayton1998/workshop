@@ -1,30 +1,31 @@
 /*
-258. Add Digits
-Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
+Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
+
+Return the decimal value of the number in the linked list.
+
+The most significant bit is at the head of the linked list.
 
  
 
 Example 1:
 
-Input: num = 38
-Output: 2
-Explanation: The process is
-38 --> 3 + 8 --> 11
-11 --> 1 + 1 --> 2 
-Since 2 has only one digit, return it.
+Input: head = [1,0,1]
+Output: 5
+Explanation: (101) in base 2 = (5) in base 10
+
+
 Example 2:
 
-Input: num = 0
+Input: head = [0]
 Output: 0
  
 
 Constraints:
 
-0 <= num <= 231 - 1
- 
-
-Follow up: Could you do it without any loop/recursion in O(1) runtime?
+The Linked List is not empty.
+Number of nodes will not exceed 30.
+Each node's value is either 0 or 1.
 */
-var addDigits = function(num) {
-    return 1 + (num - 1) % 9;
+var getDecimalValue = function(head) {
+    
 };
