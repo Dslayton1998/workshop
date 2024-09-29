@@ -27,5 +27,10 @@ Number of nodes will not exceed 30.
 Each node's value is either 0 or 1.
 */
 var getDecimalValue = function(head) {
-    
+    let total=0;
+    while(head!=null){
+        total=total*2+head.val;
+        head=head.next;
+    }
+    return total;
 };
