@@ -1,42 +1,33 @@
 /*
-559. Maximum Depth of N-ary Tree
-Easy
-Topics
-Companies
-Given a n-ary tree, find its maximum depth.
+482. License Key Formatting
 
-The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+You are given a license key represented as a string s that consists of only alphanumeric characters and dashes. The string is separated into n + 1 groups by n dashes. You are also given an integer k.
 
-Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).
+We want to reformat the string s such that each group contains exactly k characters, except for the first group, which could be shorter than k but still must contain at least one character. Furthermore, there must be a dash inserted between two groups, and you should convert all lowercase letters to uppercase.
+
+Return the reformatted license key.
 
  
 
 Example 1:
 
-
-
-Input: root = [1,null,3,2,4,null,5,6]
-Output: 3
+Input: s = "5F3Z-2e-9-w", k = 4
+Output: "5F3Z-2E9W"
+Explanation: The string s has been split into two parts, each part has 4 characters.
+Note that the two extra dashes are not needed and can be removed.
 Example 2:
 
-
-
-Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
-Output: 5
+Input: s = "2-5g-3-J", k = 2
+Output: "2-5G-3J"
+Explanation: The string s has been split into three parts, each part has 2 characters except the first part as it could be shorter as mentioned above.
  
 
 Constraints:
 
-The total number of nodes is in the range [0, 104].
-The depth of the n-ary tree is less than or equal to 1000.
+1 <= s.length <= 105
+s consists of English letters, digits, and dashes '-'.
+1 <= k <= 104
 */
-var maxDepth = function(root) {
-    if (root == null)
-        return 0;
+var licenseKeyFormatting = function(s, k) {
     
-    let maximumDepth = 0;
-    for (let node of root.children){
-        maximumDepth = Math.max(maximumDepth, maxDepth(node));
-    }
-    return maximumDepth + 1;
 };
