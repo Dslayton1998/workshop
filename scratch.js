@@ -29,5 +29,26 @@ s consists of English letters, digits, and dashes '-'.
 1 <= k <= 104
 */
 var licenseKeyFormatting = function(s, k) {
+    let raw = s.toUpperCase().split("-").join("");
     
+    let result = "";
+    let div = Math.floor(raw.length / k);
+    let some = raw.length - div * k;
+    let counter = 0;
+    let i = some;
+
+    while (counter <= div) {
+        if (counter === 0) {
+          result += raw.slice(counter, some);
+        } else {
+            result += `-${raw.slice(i, i + k)}`;
+            i += k;
+        }
+        counter++;
+    }
+  
+    if (result[0] === "-") {
+      return result.slice(1, result.length);
+    }
+    return result;
 };
