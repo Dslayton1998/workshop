@@ -31,5 +31,12 @@ The total number of nodes is in the range [0, 104].
 The depth of the n-ary tree is less than or equal to 1000.
 */
 var maxDepth = function(root) {
+    if (root == null)
+        return 0;
     
+    let maximumDepth = 0;
+    for (let node of root.children){
+        maximumDepth = Math.max(maximumDepth, maxDepth(node));
+    }
+    return maximumDepth + 1;
 };
