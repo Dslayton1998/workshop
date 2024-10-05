@@ -1,54 +1,32 @@
 /*
-482. License Key Formatting
+1854. Maximum Population Year
+You are given a 2D integer array logs where each logs[i] = [birthi, deathi] indicates the birth and death years of the ith person.
 
-You are given a license key represented as a string s that consists of only alphanumeric characters and dashes. The string is separated into n + 1 groups by n dashes. You are also given an integer k.
+The population of some year x is the number of people alive during that year. The ith person is counted in year x's population if x is in the inclusive range [birthi, deathi - 1]. Note that the person is not counted in the year that they die.
 
-We want to reformat the string s such that each group contains exactly k characters, except for the first group, which could be shorter than k but still must contain at least one character. Furthermore, there must be a dash inserted between two groups, and you should convert all lowercase letters to uppercase.
-
-Return the reformatted license key.
+Return the earliest year with the maximum population.
 
  
 
 Example 1:
 
-Input: s = "5F3Z-2e-9-w", k = 4
-Output: "5F3Z-2E9W"
-Explanation: The string s has been split into two parts, each part has 4 characters.
-Note that the two extra dashes are not needed and can be removed.
+Input: logs = [[1993,1999],[2000,2010]]
+Output: 1993
+Explanation: The maximum population is 1, and 1993 is the earliest year with this population.
 Example 2:
 
-Input: s = "2-5g-3-J", k = 2
-Output: "2-5G-3J"
-Explanation: The string s has been split into three parts, each part has 2 characters except the first part as it could be shorter as mentioned above.
+Input: logs = [[1950,1961],[1960,1971],[1970,1981]]
+Output: 1960
+Explanation: 
+The maximum population is 2, and it had happened in years 1960 and 1970.
+The earlier year between them is 1960.
  
 
 Constraints:
 
-1 <= s.length <= 105
-s consists of English letters, digits, and dashes '-'.
-1 <= k <= 104
+1 <= logs.length <= 100
+1950 <= birthi < deathi <= 2050
 */
-var licenseKeyFormatting = function(s, k) {
-    let raw = s.toUpperCase().split("-").join("");
+var maximumPopulation = function(logs) {
     
-    let result = "";
-    let div = Math.floor(raw.length / k);
-    let some = raw.length - div * k;
-    let counter = 0;
-    let i = some;
-
-    while (counter <= div) {
-        if (counter === 0) {
-          result += raw.slice(counter, some);
-        } else {
-            result += `-${raw.slice(i, i + k)}`;
-            i += k;
-        }
-        counter++;
-    }
-  
-    if (result[0] === "-") {
-      return result.slice(1, result.length);
-    }
-    return result;
 };
