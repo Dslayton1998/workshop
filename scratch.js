@@ -28,5 +28,8 @@ Constraints:
 1 <= nums[i] <= 105
 */
 var findNumbers = function(nums) {
-    
+    let count=0;
+    for(let x of nums)
+    count+=Math.floor(Math.log10(x)+1)%2==0;
+    return count;
 };
