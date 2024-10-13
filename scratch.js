@@ -1,32 +1,32 @@
 /*
-1854. Maximum Population Year
-You are given a 2D integer array logs where each logs[i] = [birthi, deathi] indicates the birth and death years of the ith person.
-
-The population of some year x is the number of people alive during that year. The ith person is counted in year x's population if x is in the inclusive range [birthi, deathi - 1]. Note that the person is not counted in the year that they die.
-
-Return the earliest year with the maximum population.
+Given an array nums of integers, return how many of them contain an even number of digits.
 
  
 
 Example 1:
 
-Input: logs = [[1993,1999],[2000,2010]]
-Output: 1993
-Explanation: The maximum population is 1, and 1993 is the earliest year with this population.
+Input: nums = [12,345,2,6,7896]
+Output: 2
+Explanation: 
+12 contains 2 digits (even number of digits). 
+345 contains 3 digits (odd number of digits). 
+2 contains 1 digit (odd number of digits). 
+6 contains 1 digit (odd number of digits). 
+7896 contains 4 digits (even number of digits). 
+Therefore only 12 and 7896 contain an even number of digits.
 Example 2:
 
-Input: logs = [[1950,1961],[1960,1971],[1970,1981]]
-Output: 1960
+Input: nums = [555,901,482,1771]
+Output: 1 
 Explanation: 
-The maximum population is 2, and it had happened in years 1960 and 1970.
-The earlier year between them is 1960.
+Only 1771 contains an even number of digits.
  
 
 Constraints:
 
-1 <= logs.length <= 100
-1950 <= birthi < deathi <= 2050
+1 <= nums.length <= 500
+1 <= nums[i] <= 105
 */
-var maximumPopulation = function(logs) {
+var findNumbers = function(nums) {
     
 };
