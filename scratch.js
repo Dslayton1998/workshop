@@ -30,5 +30,17 @@ n == mat[i].length
 1 <= r, c <= 300
 */
 var matrixReshape = function(mat, r, c) {
+    if (mat.length * mat[0].length !== r * c) return mat;
+    const result = [];
+    const newRow = [];
     
+    const flatArray = mat.flat();
+    for (let item of flatArray){
+        newRow.push(item)
+        if (newRow.length === c) {
+            result.push([...newRow]);
+            newRow.length = 0;
+        }
+    }
+    return result;
 };
