@@ -2361,3 +2361,8 @@ var findNumbers = function(nums) {
     count+=Math.floor(Math.log10(x)+1)%2==0;
     return count;
 };
+
+
+
+
+//* 762. Prime Number of Set Bits in Binary Representation * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
