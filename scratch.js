@@ -37,5 +37,17 @@ Constraints:
 0 <= right - left <= 104
 */
 var countPrimeSetBits = function(left, right) {
-    
+    const isPrime = (num) => {
+        const sqrt = Math.sqrt(num);
+        for(let i = 2; i <= sqrt; i++) {
+            if(num % i == 0) return false
+        }
+        return num > 1;
+    }
+    let counter = 0;
+    for(let i = left; i <=right; i++) {
+        const len = i.toString(2).replace(/0/g, '').length;
+        isPrime(len) ? counter++ : counter
+    }
+    return counter
 };
