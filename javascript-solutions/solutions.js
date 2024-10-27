@@ -2517,3 +2517,8 @@ var isPowerOfTwo = function(n) {
     
     return n === 1;
 };
+
+
+
+
+//* 2784. Check if Array is Good * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
