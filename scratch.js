@@ -1,46 +1,33 @@
 /*
-In MATLAB, there is a handy function called reshape which can reshape an m x n matrix into a new one with a different size r x c keeping its original data.
+Given an integer n, return true if it is a power of two. Otherwise, return false.
 
-You are given an m x n matrix mat and two integers r and c representing the number of rows and the number of columns of the wanted reshaped matrix.
-
-The reshaped matrix should be filled with all the elements of the original matrix in the same row-traversing order as they were.
-
-If the reshape operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix.
+An integer n is a power of two, if there exists an integer x such that n == 2x.
 
  
 
 Example 1:
 
-
-Input: mat = [[1,2],[3,4]], r = 1, c = 4
-Output: [[1,2,3,4]]
+Input: n = 1
+Output: true
+Explanation: 20 = 1
 Example 2:
 
+Input: n = 16
+Output: true
+Explanation: 24 = 16
+Example 3:
 
-Input: mat = [[1,2],[3,4]], r = 2, c = 4
-Output: [[1,2],[3,4]]
+Input: n = 3
+Output: false
  
 
 Constraints:
 
-m == mat.length
-n == mat[i].length
-1 <= m, n <= 100
--1000 <= mat[i][j] <= 1000
-1 <= r, c <= 300
+-231 <= n <= 231 - 1
+ 
+
+Follow up: Could you solve it without loops/recursion?
 */
-var matrixReshape = function(mat, r, c) {
-    if (mat.length * mat[0].length !== r * c) return mat;
-    const result = [];
-    const newRow = [];
+var isPowerOfTwo = function(n) {
     
-    const flatArray = mat.flat();
-    for (let item of flatArray){
-        newRow.push(item)
-        if (newRow.length === c) {
-            result.push([...newRow]);
-            newRow.length = 0;
-        }
-    }
-    return result;
 };

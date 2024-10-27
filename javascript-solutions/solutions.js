@@ -2471,3 +2471,9 @@ var matrixReshape = function(mat, r, c) {
     }
     return result;
 };
+
+
+
+
+
+//* 231. Power of Two * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
