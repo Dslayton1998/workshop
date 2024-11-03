@@ -2637,3 +2637,7 @@ var getSneakyNumbers = function(nums) {
     let data = Array.from(new Set(res));
     return [data[0],[data[1]]]
 };
+
+
+
+//* 2243. Calculate Digit Sum of a String * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
