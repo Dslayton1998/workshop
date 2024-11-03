@@ -39,5 +39,29 @@ Constraints:
 s consists of digits only.
 */
 var digitSum = function(s, k) {
-    
+    function rec(s) {
+        if (s.length <= k) return s
+
+        let str = '';
+
+
+        for (let i = 0; i < s.length; i += k) {
+            let str2 = 0
+            for (let j = i; j < i + k && j < s.length; j++) {
+                str2 += Number(s[j]);
+            }
+            str += str2.toString()
+        }
+        console.log(str.length !== k)
+
+        if(str.length !== k){
+            return rec(str)
+        }else{
+            return str
+        }
+
+
+    }
+
+    return rec(s)
 };
