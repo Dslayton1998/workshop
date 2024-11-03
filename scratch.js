@@ -45,5 +45,17 @@ nums.length == n + 2
 The input is generated such that nums contains exactly two repeated elements.
 */
 var getSneakyNumbers = function(nums) {
+    const arr = nums.sort((a,b) => a - b)
+    const res = []
+    let i=0
     
+    while(i < arr.length-1){
+        if(arr[i]==arr[i+1]) {
+            res.push(arr[i])
+        }  
+        i++
+    }
+    
+    let data = Array.from(new Set(res));
+    return [data[0],[data[1]]]
 };
