@@ -30,5 +30,21 @@ n == matrix[i].length
 The input is generated such that each column contains at least one non-negative integer.
 */
 var modifiedMatrix = function(matrix) {
-    
+    let maxArr=[];
+    for(let j=0;j<matrix[0].length;j++){
+        let max=matrix[0][j]
+        for(let i=0;i<matrix.length;i++){
+            max= Math.max(max,matrix[i][j])
+        }
+        maxArr.push(max);
+    }
+
+    for(let i=0;i<matrix.length;i++){
+        for(let j=0;j<matrix[0].length;j++){
+            if(matrix[i][j]===-1){
+                matrix[i][j]=maxArr[j];
+            }
+        }
+    }
+
 };
