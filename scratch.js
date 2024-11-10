@@ -27,5 +27,18 @@ Constraints:
 moves only contains the characters 'U', 'D', 'L' and 'R'.
 */
 var judgeCircle = function(moves) {
-    
+    cnt = 0; c = 0;
+    for (i = 0; i < moves.length; i++) {
+        if (moves[i] == 'L')
+            cnt++;
+        if (moves[i] == 'R')
+            cnt--;
+        if (moves[i] == 'U')
+            c++;
+        if (moves[i] == 'D')
+            c--;
+    }
+    if (c == 0 && cnt == 0)
+        return true;
+    return false;
 };
