@@ -31,5 +31,12 @@ Constraints:
 s consists of only upper case and lower case English letters.
 */
 var countKeyChanges = function(s) {
-    
+    let count = 0;
+    for (let i = 1; i < s.length; i++) {
+        let x = s.charCodeAt(i) - s.charCodeAt(i - 1);
+        if (x !== 32 && x !== -32 && x !== 0) {
+            count++;
+        }
+    }
+return count;
 };
