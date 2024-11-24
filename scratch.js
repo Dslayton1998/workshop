@@ -58,5 +58,11 @@ Constraints:
 1 <= k <= 50
 */
 var numberOfChild = function(n, k) {
-    
+    let fullRounds = Math.floor(k / (n - 1));
+    let remainingTime = k % (n - 1);
+
+    if (fullRounds % 2 === 0) {
+        return remainingTime;
+    }
+    return n - 1 - remainingTime;
 };
