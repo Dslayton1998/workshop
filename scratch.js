@@ -1,42 +1,62 @@
 /*
-You are given a 0-indexed string s typed by a user. Changing a key is defined as using a key different from the last used key. For example, s = "ab" has a change of a key while s = "bBBb" does not have any.
+You are given two positive integers n and k. There are n children numbered from 0 to n - 1 standing in a queue in order from left to right.
 
-Return the number of times the user had to change the key.
+Initially, child 0 holds a ball and the direction of passing the ball is towards the right direction. After each second, the child holding the ball passes it to the child next to them. Once the ball reaches either end of the line, i.e. child 0 or child n - 1, the direction of passing is reversed.
 
-Note: Modifiers like shift or caps lock won't be counted in changing the key that is if a user typed the letter 'a' and then the letter 'A' then it will not be considered as a changing of key.
+Return the number of the child who receives the ball after k seconds.
 
  
 
 Example 1:
 
-Input: s = "aAbBcC"
-Output: 2
-Explanation: 
-From s[0] = 'a' to s[1] = 'A', there is no change of key as caps lock or shift is not counted.
-From s[1] = 'A' to s[2] = 'b', there is a change of key.
-From s[2] = 'b' to s[3] = 'B', there is no change of key as caps lock or shift is not counted.
-From s[3] = 'B' to s[4] = 'c', there is a change of key.
-From s[4] = 'c' to s[5] = 'C', there is no change of key as caps lock or shift is not counted.
+Input: n = 3, k = 5
 
+Output: 1
+
+Explanation:
+
+Time elapsed	Children
+0	[0, 1, 2]
+1	[0, 1, 2]
+2	[0, 1, 2]
+3	[0, 1, 2]
+4	[0, 1, 2]
+5	[0, 1, 2]
 Example 2:
 
-Input: s = "AaAaAaaA"
-Output: 0
-Explanation: There is no change of key since only the letters 'a' and 'A' are pressed which does not require change of key.
+Input: n = 5, k = 6
+
+Output: 2
+
+Explanation:
+
+Time elapsed	Children
+0	[0, 1, 2, 3, 4]
+1	[0, 1, 2, 3, 4]
+2	[0, 1, 2, 3, 4]
+3	[0, 1, 2, 3, 4]
+4	[0, 1, 2, 3, 4]
+5	[0, 1, 2, 3, 4]
+6	[0, 1, 2, 3, 4]
+Example 3:
+
+Input: n = 4, k = 2
+
+Output: 2
+
+Explanation:
+
+Time elapsed	Children
+0	[0, 1, 2, 3]
+1	[0, 1, 2, 3]
+2	[0, 1, 2, 3]
  
 
 Constraints:
 
-1 <= s.length <= 100
-s consists of only upper case and lower case English letters.
+2 <= n <= 50
+1 <= k <= 50
 */
-var countKeyChanges = function(s) {
-    let count = 0;
-    for (let i = 1; i < s.length; i++) {
-        let x = s.charCodeAt(i) - s.charCodeAt(i - 1);
-        if (x !== 32 && x !== -32 && x !== 0) {
-            count++;
-        }
-    }
-return count;
+var numberOfChild = function(n, k) {
+    
 };
