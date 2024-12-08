@@ -3179,3 +3179,9 @@ var answerQueries = function(nums, queries) {
     
     return ans;
 };
+
+
+
+
+
+//* 2928. Distribute Candies Among Children I * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
