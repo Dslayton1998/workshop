@@ -1,44 +1,36 @@
 /*
-Hercy wants to save money for his first car. He puts money in the Leetcode bank every day.
+Given an array nums, return true if the array was originally sorted in non-decreasing order, then rotated some number of positions (including zero). Otherwise, return false.
 
-He starts by putting in $1 on Monday, the first day. Every day from Tuesday to Sunday, he will put in $1 more than the day before. On every subsequent Monday, he will put in $1 more than the previous Monday.
+There may be duplicates in the original array.
 
-Given n, return the total amount of money he will have in the Leetcode bank at the end of the nth day.
+Note: An array A rotated by x positions results in an array B of the same length such that A[i] == B[(i+x) % A.length], where % is the modulo operation.
 
  
 
 Example 1:
 
-Input: n = 4
-Output: 10
-Explanation: After the 4th day, the total is 1 + 2 + 3 + 4 = 10.
+Input: nums = [3,4,5,1,2]
+Output: true
+Explanation: [1,2,3,4,5] is the original sorted array.
+You can rotate the array by x = 3 positions to begin on the the element of value 3: [3,4,5,1,2].
 Example 2:
 
-Input: n = 10
-Output: 37
-Explanation: After the 10th day, the total is (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4) = 37. Notice that on the 2nd Monday, Hercy only puts in $2.
+Input: nums = [2,1,3,4]
+Output: false
+Explanation: There is no sorted array once rotated that can make nums.
 Example 3:
 
-Input: n = 20
-Output: 96
-Explanation: After the 20th day, the total is (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4 + 5 + 6 + 7 + 8) + (3 + 4 + 5 + 6 + 7 + 8) = 96.
+Input: nums = [1,2,3]
+Output: true
+Explanation: [1,2,3] is the original sorted array.
+You can rotate the array by x = 0 positions (i.e. no rotation) to make nums.
  
 
 Constraints:
 
-1 <= n <= 1000
+1 <= nums.length <= 100
+1 <= nums[i] <= 100
 */
-var totalMoney = function(n) {
-    let ans = 0;        
-    let monday = 1;     
-    while (n > 0) {     
-        for (let day = 0; day < Math.min(n, 7); day++) {  
-            ans += monday + day;  
-        }
-        
-        n -= 7;         
-        monday++;       
-    }
-
-    return ans; 
+var check = function(nums) {
+    
 };
