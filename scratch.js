@@ -24,5 +24,13 @@ Follow up: Could you do it without extra space and in O(n) runtime?
 You may assume the returned list does not count as extra space.
 */
 var findDisappearedNumbers = function(nums) {
-    
+    let obj={}
+    for(let n of nums){
+        obj[n]=1
+    }
+    let arr=[]
+    for(let i=1;i<=nums.length;i++){
+        if(!obj[i]) arr.push(i)
+    }
+    return arr
 };
