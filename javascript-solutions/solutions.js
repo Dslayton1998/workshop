@@ -3322,3 +3322,8 @@ var check = function(nums) {
     
     return cnt<=1;
 };
+
+
+
+
+//* 1752. Check if Array Is Sorted and Rotated * \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
