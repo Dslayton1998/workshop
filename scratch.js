@@ -31,5 +31,16 @@ Constraints:
 words[i] and s consist of only lowercase English letters.
 */
 var isPrefixString = function(s, words) {
-    
+    let prefixStr = ""
+    let isPrefix = false
+    words.forEach((word) => {
+        prefixStr = prefixStr.concat(word)
+
+        if (prefixStr === s) {
+            isPrefix = true
+            return
+        }
+    })
+
+    return isPrefix
 };
