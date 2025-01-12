@@ -1,48 +1,35 @@
 /*
-2231. Largest Number After Digit Swaps by Parity
+1961. Check If String Is a Prefix of Array
 
-You are given a positive integer num. You may swap any two digits of num that have the same parity (i.e. both odd digits or both even digits).
+Given a string s and an array of strings words, determine whether s is a prefix string of words.
 
-Return the largest possible value of num after any number of swaps.
+A string s is a prefix string of words if s can be made by concatenating the first k strings in words for some positive k no larger than words.length.
+
+Return true if s is a prefix string of words, or false otherwise.
 
  
 
 Example 1:
 
-Input: num = 1234
-Output: 3412
-Explanation: Swap the digit 3 with the digit 1, this results in the number 3214.
-Swap the digit 2 with the digit 4, this results in the number 3412.
-Note that there may be other sequences of swaps but it can be shown that 3412 is the largest possible number.
-Also note that we may not swap the digit 4 with the digit 1 since they are of different parities.
+Input: s = "iloveleetcode", words = ["i","love","leetcode","apples"]
+Output: true
+Explanation:
+s can be made by concatenating "i", "love", and "leetcode" together.
 Example 2:
 
-Input: num = 65875
-Output: 87655
-Explanation: Swap the digit 8 with the digit 6, this results in the number 85675.
-Swap the first digit 5 with the digit 7, this results in the number 87655.
-Note that there may be other sequences of swaps but it can be shown that 87655 is the largest possible number.
+Input: s = "iloveleetcode", words = ["apples","i","love","leetcode"]
+Output: false
+Explanation:
+It is impossible to make s using a prefix of arr.
  
 
 Constraints:
 
-1 <= num <= 109
+1 <= words.length <= 100
+1 <= words[i].length <= 20
+1 <= s.length <= 1000
+words[i] and s consist of only lowercase English letters.
 */
-
-var largestInteger = function(num) {
-    let answer = '';
-    const sorted = [...String(num)].sort((a, b) => a - b);
-
-    const odd = sorted.filter((i) => i % 2 === 1);
-    const even = sorted.filter((i) => i % 2 === 0);
+var isPrefixString = function(s, words) {
     
-    for (let i = 0; i < sorted.length; i++) {
-        if (String(num)[i] % 2 === 0) {
-            answer += even.pop();
-        } else {
-            answer += odd.pop();
-        }
-    }
-
-    return answer;
 };
