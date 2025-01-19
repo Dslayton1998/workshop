@@ -1,58 +1,38 @@
 /*
-94. Binary Tree Inorder Traversal
+766. Toeplitz Matrix
+Given an m x n matrix, return true if the matrix is Toeplitz. Otherwise, return false.
 
-Given the root of a binary tree, return the inorder traversal of its nodes' values.
+A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.
 
+ 
 
 Example 1:
 
-Input: root = [1,null,2,3]
 
-Output: [1,3,2]
-
+Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
+Output: true
 Explanation:
-
+In the above grid, the diagonals are:
+"[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]".
+In each diagonal all elements are the same, so the answer is True.
 
 
 Example 2:
 
-Input: root = [1,2,3,4,5,null,8,null,null,6,7,9]
 
-Output: [4,2,6,5,7,1,3,9,8]
-
+Input: matrix = [[1,2],[2,2]]
+Output: false
 Explanation:
-
-
-
-Example 3:
-
-Input: root = []
-
-Output: []
-
-Example 4:
-
-Input: root = [1]
-
-Output: [1]
-
+The diagonal "[1, 2]" has different elements.
  
 
 Constraints:
 
-The number of nodes in the tree is in the range [0, 100].
--100 <= Node.val <= 100
+m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 20
+0 <= matrix[i][j] <= 99
 */
-var inorderTraversal = function(root) {
-    const result = [];
-    helper(root, result);
-    return result;
-};
-
-function helper(root, result) {
-    if (root !== null) {
-        helper(root.left, result);
-        result.push(root.val);
-        helper(root.right, result);
-    }
+var isToeplitzMatrix = function(matrix) {
+    
 };
