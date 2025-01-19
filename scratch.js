@@ -1,48 +1,36 @@
 /*
-766. Toeplitz Matrix
-Given an m x n matrix, return true if the matrix is Toeplitz. Otherwise, return false.
+You are given a string word that consists of digits and lowercase English letters.
 
-A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.
+You will replace every non-digit character with a space. For example, "a123bc34d8ef34" will become " 123  34 8  34". Notice that you are left with some integers that are separated by at least one space: "123", "34", "8", and "34".
+
+Return the number of different integers after performing the replacement operations on word.
+
+Two integers are considered different if their decimal representations without any leading zeros are different.
 
  
 
 Example 1:
 
-
-Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
-Output: true
-Explanation:
-In the above grid, the diagonals are:
-"[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]".
-In each diagonal all elements are the same, so the answer is True.
-
-
+Input: word = "a123bc34d8ef34"
+Output: 3
+Explanation: The three different integers are "123", "34", and "8". Notice that "34" is only counted once.
 Example 2:
 
+Input: word = "leet1234code234"
+Output: 2
+Example 3:
 
-Input: matrix = [[1,2],[2,2]]
-Output: false
-Explanation:
-The diagonal "[1, 2]" has different elements.
+Input: word = "a1b01c001"
+Output: 1
+Explanation: The three integers "1", "01", and "001" all represent the same integer because
+the leading zeros are ignored when comparing their decimal values.
  
 
 Constraints:
 
-m == matrix.length
-n == matrix[i].length
-1 <= m, n <= 20
-0 <= matrix[i][j] <= 99
+1 <= word.length <= 1000
+word consists of digits and lowercase English letters.
 */
-var isToeplitzMatrix = function(matrix) {
-    const m = matrix.length;
-    const n = matrix[0].length;
+var numDifferentIntegers = function(word) {
     
-    
-    for (let i = 1; i < m; i++) {
-        for (let j = 1; j < n; j++) {
-            if (matrix[i][j] != matrix[i - 1][j - 1]) return false;
-        }     
-    }
-	
-    return true;
 };
